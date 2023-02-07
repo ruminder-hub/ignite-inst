@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { NavBar } from './components/navBar';
 import { Header } from './components/header';
 import { ContactUs } from './pages/contactUs';
 import { AboutUs } from './pages/aboutUs';
@@ -40,7 +38,7 @@ function App() {
           <div className="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div className="icon-box">
               <div className="icon"><i className="bx bxl-dribbble"></i></div>
-              <h4 className="title"><a href="">Lorem Ipsum</a></h4>
+              <h4 className="title"><a>Lorem Ipsum</a></h4>
               <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
             </div>
           </div>
@@ -48,7 +46,7 @@ function App() {
           <div className="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
             <div className="icon-box">
               <div className="icon"><i className="bx bx-file"></i></div>
-              <h4 className="title"><a href="">Sed ut perspiciatis</a></h4>
+              <h4 className="title"><a >Sed ut perspiciatis</a></h4>
               <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
             </div>
           </div>
@@ -56,7 +54,7 @@ function App() {
           <div className="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
             <div className="icon-box">
               <div className="icon"><i className="bx bx-tachometer"></i></div>
-              <h4 className="title"><a href="">Magni Dolores</a></h4>
+              <h4 className="title"><a >Magni Dolores</a></h4>
               <p className="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
             </div>
           </div>
@@ -64,7 +62,7 @@ function App() {
           <div className="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
             <div className="icon-box">
               <div className="icon"><i className="bx bx-world"></i></div>
-              <h4 className="title"><a href="">Nemo Enim</a></h4>
+              <h4 className="title"><a >Nemo Enim</a></h4>
               <p className="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
             </div>
           </div>
@@ -332,10 +330,10 @@ function App() {
                   <span>Chief Executive Officer</span>
                 </div>
                 <div className="social">
-                  <a href=""><i className="bi bi-twitter"></i></a>
-                  <a href=""><i className="bi bi-facebook"></i></a>
-                  <a href=""><i className="bi bi-instagram"></i></a>
-                  <a href=""><i className="bi bi-linkedin"></i></a>
+                  <a ><i className="bi bi-twitter"></i></a>
+                  <a ><i className="bi bi-facebook"></i></a>
+                  <a ><i className="bi bi-instagram"></i></a>
+                  <a ><i className="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
@@ -350,10 +348,10 @@ function App() {
                   <span>Product Manager</span>
                 </div>
                 <div className="social">
-                  <a href=""><i className="bi bi-twitter"></i></a>
-                  <a href=""><i className="bi bi-facebook"></i></a>
-                  <a href=""><i className="bi bi-instagram"></i></a>
-                  <a href=""><i className="bi bi-linkedin"></i></a>
+                  <a ><i className="bi bi-twitter"></i></a>
+                  <a ><i className="bi bi-facebook"></i></a>
+                  <a ><i className="bi bi-instagram"></i></a>
+                  <a ><i className="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
@@ -368,10 +366,10 @@ function App() {
                   <span>CTO</span>
                 </div>
                 <div className="social">
-                  <a href=""><i className="bi bi-twitter"></i></a>
-                  <a href=""><i className="bi bi-facebook"></i></a>
-                  <a href=""><i className="bi bi-instagram"></i></a>
-                  <a href=""><i className="bi bi-linkedin"></i></a>
+                  <a ><i className="bi bi-twitter"></i></a>
+                  <a ><i className="bi bi-facebook"></i></a>
+                  <a ><i className="bi bi-instagram"></i></a>
+                  <a ><i className="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
@@ -386,10 +384,10 @@ function App() {
                   <span>Accountant</span>
                 </div>
                 <div className="social">
-                  <a href=""><i className="bi bi-twitter"></i></a>
-                  <a href=""><i className="bi bi-facebook"></i></a>
-                  <a href=""><i className="bi bi-instagram"></i></a>
-                  <a href=""><i className="bi bi-linkedin"></i></a>
+                  <a ><i className="bi bi-twitter"></i></a>
+                  <a ><i className="bi bi-facebook"></i></a>
+                  <a ><i className="bi bi-instagram"></i></a>
+                  <a ><i className="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
