@@ -1,3 +1,4 @@
+import { websiteName } from "../config/constants"
 import { NavBar } from "./navBar"
 
 export const Header = () => {
@@ -6,7 +7,7 @@ export const Header = () => {
     <div className="container d-flex align-items-center justify-content-between">
 
       <div className="logo">
-        <h1 className="text-light"><a href="index.html"><span>Ignite Institute</span></a></h1>
+        <h1 className="text-light"><a href="index.html"><span>{websiteName}</span></a></h1>
         {/* <!-- Uncomment below if you prefer to use an image logo --> */}
         {/* <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>--> */}
       </div>
