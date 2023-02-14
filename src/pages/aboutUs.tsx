@@ -8,20 +8,20 @@ export const AboutUs = () => {
                     <img src="assets/img/about-img.svg" className="img-fluid" alt="" data-aos="zoom-in"/>
                 </div>
                 <div className="col-lg-6 pt-5 pt-lg-0">
-                    <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
+                    <h3 data-aos="fade-up">WELCOME TO IGNITE INSTITUTE</h3>
                     <p data-aos="fade-up" data-aos-delay="100">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                    Ignite Institute is a Academy of Excellence in Management / Information Technology / Certificate Courses
                     </p>
                     <div className="row">
                     <div className="col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <i className="bx bx-receipt"></i>
-                        <h4>Corporis voluptates sit</h4>
-                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                        <h4>Training</h4>
+                        <p>We provide students a thorough training that will allow them to build up a professional career in their field of interest.</p>
                     </div>
                     <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <i className="bx bx-cube-alt"></i>
-                        <h4>Ullamco laboris nisi</h4>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                        <h4>Our Mission</h4>
+                        <p>We will enable all individuals to gain access to decent employment and ensure India's competitiveness in the job market by improving your skills and knowledge.</p>
                     </div>
                     </div>
                 </div>
