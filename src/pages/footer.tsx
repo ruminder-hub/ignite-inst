@@ -25,10 +25,10 @@ export const Footer = () =>{
     
               <div className="col-lg-3 col-md-6 footer-contact">
                 <h3>{Constants.websiteName}</h3>
-                <p> Opposite to Shri Aggarwal Peerkhana,<br></br> Bareta, Punjab <br></br>151501, India
+                <p> {Constants.address}<br></br> {Constants.city} <br></br>{Constants.pinCode}
                 <br></br><br></br>
-                  <strong>Phone:</strong> +91 9501216655 <br></br>
-                  <strong>Email:</strong> info@example.com<br></br>
+                  <strong>Phone:</strong> {Constants.mobileNo} <br></br>
+                  <strong>Email:</strong> {Constants.email}<br></br>
                 </p>
               </div>
     

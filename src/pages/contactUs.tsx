@@ -1,3 +1,5 @@
+import { address, city, email, mobileNo, pinCode } from "../config/constants"
+
 export const ContactUs = () =>{
     return (
         <section id="contact" className="contact">
@@ -15,19 +17,19 @@ export const ContactUs = () =>{
               <div className="address">
                 <i className="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>opposite to Shri Aggarwal Peerkhana, Bareta, Punjab 151501, India</p>
+                <p>{address} {city} {pinCode}</p>
               </div>
 
               <div className="email">
                 <i className="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>{email}</p>
               </div>
 
               <div className="phone">
                 <i className="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+91 9501216655</p>
+                <p>{mobileNo}</p>
               </div>
 
               <iframe title="locatioin" style={{border:0, width: "100%", height: "290px"}} allowFullScreen={true} src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Ignite%20Institute,%20opposite%20to%20Shri%20Aggarwal%20Peerkhana,%20Bareta,%20Punjab%20151501,%20India+(Ignite%20Institute)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe>
