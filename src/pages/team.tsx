@@ -45,7 +45,7 @@ export const Team = () => {
           </div>
         </div>
 
-        <div className="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        {/* <div className="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
           <div className="member">
             <img src="assets/img/team/team-3.jpg" className="img-fluid" alt=""/>
             <div className="member-info">
@@ -79,7 +79,7 @@ export const Team = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
 
