@@ -1,4 +1,4 @@
-import { address, city, email, mobileNoList, pinCode } from "../config/constants"
+import { address, city, email, mobileNoList, pinCode } from "../../config/constants"
 
 export const ContactUs = () =>{
     return (
@@ -29,7 +29,15 @@ export const ContactUs = () =>{
               <div className="phone">
                 <i className="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>{mobileNoList}</p>
+                <div className="row">
+                {
+                  mobileNoList.map((val, index) => {
+                      return (<><p className="col-md-6" style={{display:"block"}}>{val}</p></>)
+                  })
+                }
+                </div>
+                
+                
               </div>
 
               <iframe title="locatioin" style={{border:0, width: "100%", height: "290px"}} allowFullScreen={true} src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Ignite%20Institute,%20opposite%20to%20Shri%20Aggarwal%20Peerkhana,%20Bareta,%20Punjab%20151501,%20India+(Ignite%20Institute)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe>

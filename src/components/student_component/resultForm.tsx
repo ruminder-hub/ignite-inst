@@ -1,18 +1,12 @@
 import axios from 'axios';
 import React, {useState} from 'react';
-import { APP_URL_CONFIG } from '../App.Urls';
-import {useInput} from '../custom_hooks/form_hooks';
+import { APP_URL_CONFIG } from '../../App.Urls';
+import {useInput} from '../../custom_hooks/form_hooks';
 import { Navigate, createSearchParams, redirect, useNavigate } from 'react-router-dom';
 
 export const ResultForm = (setResultState: any) => {
     const [showLoading, setShowLoading] = useState(false);
     let navigate = useNavigate();
-    const handleSubmit = (event: React.SyntheticEvent) => {
-        alert(`Currently facing issue, please try again later`);
-        let navigate = useNavigate();
-        navigate("/");
-        // navigate("/result", { state: { message: "Failed to submit form" } });
-      }
 
     const resetForm = () => {
         setShowLoading(false);
@@ -25,7 +19,7 @@ export const ResultForm = (setResultState: any) => {
         setShowLoading(true)
     
         await axios
-        .get(APP_URL_CONFIG.BACKEND_VERIFY_RESULTS + rollNumber + "?regId=" + registrationNumber,
+        .get(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.BACKEND_VERIFY_RESULTS + registrationNumber + "?rollNo=" + rollNumber,
         {
             headers: {
                 'Access-Control-Allow-Origin': '*'
@@ -41,7 +35,7 @@ export const ResultForm = (setResultState: any) => {
             }
         })
         .catch(err => {
-            let message = "Internal error occurred, Please try again";
+            let message = "Internal server error occurred, Please try again";
             if (err.response.status == 404) {
                 message = "Student with provided details not found, Please try again";
             }

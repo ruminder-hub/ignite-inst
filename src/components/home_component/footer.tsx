@@ -1,4 +1,4 @@
-import * as Constants from "../config/constants"
+import * as Constants from "../../config/constants"
 export const Footer = () =>{
     return (
         <footer id="footer">

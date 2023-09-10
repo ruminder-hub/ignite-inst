@@ -45,6 +45,24 @@ export const Team = () => {
           </div>
         </div>
 
+        <div className="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div className="member">
+            <img src="assets/img/team/nirmaljit.jpeg" className="img-fluid" alt=""/>
+            <div className="member-info">
+              <div className="member-info-content">
+                <h4>Nirmaljit</h4>
+                <span>Computer Operator</span>
+              </div>
+              <div className="social">
+                <a ><i className="bi bi-twitter"></i></a>
+                <a ><i className="bi bi-facebook"></i></a>
+                <a ><i className="bi bi-instagram"></i></a>
+                <a ><i className="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* <div className="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
           <div className="member">
             <img src="assets/img/team/team-3.jpg" className="img-fluid" alt=""/>

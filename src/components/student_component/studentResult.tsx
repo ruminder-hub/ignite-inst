@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { HomeHeader } from "../header";
 import { Header } from "../header";
 import { useLocation, useSearchParams } from "react-router-dom";
+import { Navbar } from "../navbar_component/navbar";
 
 export const StudentResult = (input: any) => {
     const [data, setData] = useState(
@@ -15,55 +16,35 @@ export const StudentResult = (input: any) => {
             courseDurationHours: 0,
             regId: "",
             rollNo: "",
-            staus: "",
+            status: "",
             subjects: [ 
             ]
         }
     );
     const location = useLocation();
     const state = location.state;
-    const [searchParams] = useSearchParams();
 
     useEffect(() => {
-        console.log("Ruby input us")
-        
         const json = state.input
+        setData(prevState => ({
+            ...prevState,
+            studentName: json.studentName,
+            fatherName: json.fatherName,
+            motherName: json.motherName,
+            courseName: json.courseName,
+            courseDurationMonths: json.courseDurationMonths,
+            courseDurationHours: json.courseDurationHours,
+            subjects: json.subjects,
+            regId: json.regId,
+            rollNo: json.rollNo,
+            status: json.status,
 
-        console.log(json);
-        // const fetchData = async () => {
-        //     const requestOptions = {
-        //         method: 'GET',
-        //         'Access-Control-Allow-Origin': '*'
-        //         // headers: { 'Content-Type': 'application/json' },
-        //         // body: JSON.stringify({ title: 'React POST Request Example' })
-        //     };
-        //     const response = await fetch('/student/1234?regId=4', requestOptions);
-        //     const json = await response.json();
-        //     console.log(json);
-            setData(prevState => ({
-                ...prevState,
-                studentName: json.studentName,
-                fatherName: json.fatherName,
-                motherName: json.motherName,
-                courseName: json.courseName,
-                courseDurationMonths: json.courseDurationMonths,
-                courseDurationHours: json.courseDurationHours,
-                subjects: json.subjects,
-                regId: json.regId,
-                rollNo: json.rollNo,
-                status: json.status,
-
-            }));
-        //   }
-
-        //   fetchData().catch(console.error);
-    
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+        }));
     }, []);
 
     return (
         <>
-        <Header/>
+        <Navbar isMainPage={false}/>
         <section id="hero" className="d-flex align-items-center" style={{background: "#ee7742"}}>
 
             <div className="container" style={{background: "#ee7742"}}>
@@ -94,6 +75,12 @@ export const StudentResult = (input: any) => {
             
             {
                 data.subjects.map((data: any, index: any)=>{
+                    if (data.extMarksObtained == 0) {
+                        data.extMarksObtained = "-";
+                    }
+                    if (data.intMarksObtained == 0) {
+                        data.intMarksObtained = "-";
+                    }
                     return(
                         <tr key={index}>
                             <td className="text-center">{index+1}</td>
@@ -107,7 +94,8 @@ export const StudentResult = (input: any) => {
             </tbody>
         </table>
 
-        <div>Result: {data.staus}</div>
+        <div>Result: {data.status}</div>
+    
         </div>
         </section>
         </>

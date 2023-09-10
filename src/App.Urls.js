@@ -1,7 +1,7 @@
 export var APP_URL_CONFIG = {
     BASE_URL: getConfigs()["BASE_URL"],
-    VERIFYRESULTS: "/verify-results",
-    BACKEND_VERIFY_RESULTS: "/student/"
+    VERIFYRESULTS: "/user/student-result",
+    BACKEND_VERIFY_RESULTS: "/user/student-result/"
    
   };
   
@@ -21,6 +21,6 @@ export var APP_URL_CONFIG = {
     //   };
     // }
     return {
-      BASE_URL: "http://34.87.59.190:8080"
+      BASE_URL: "https://ignite-express-backend.vercel.app"
     }
   }
