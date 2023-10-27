@@ -52,7 +52,6 @@ function DynamicInputGenerator({ onDataFetch }: DynamicInputGeneratorProps) {
   };
 
   const handleGetData = (data: SubjectEntry[]) => {
-    console.log(data);
     onDataFetch(data);
   };
 

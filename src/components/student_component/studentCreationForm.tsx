@@ -66,45 +66,41 @@ export const StudentCreationForm = (setResultState: any) => {
     const onSubmit = async (e: any) => {
         e.preventDefault();
         setShowLoading(true)
-        console.log(fetchedData)
     
-        // await axios
-        // .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.BACKEND_SAVE_STUDENT_RECORD,
-        // {
-        //     // headers: {
-        //     //     'Access-Control-Allow-Origin': '*'
-        //     // },
-        //     regId: regId,
-        //     rollNo: rollNo,
-        //     studentName: studentName,
-        //     motherName: motherName,
-        //     fatherName: fatherName,
-        //     courseName: courseName,
-        //     courseDurationMonths: courseDurationMonths,
-        //     courseDurationHours: courseDurationHours,
-        //     status: status,
-        //     dateOfIssue: dateOfIssue,
-        //     subjects: fetchedData
-        // })
-        // .then((res) => {
-        //     console.log(res)
-        //     if (res.status === 200) {
-        //         console.log(res);
-        //         console.log(res.data);
-        //         navigate("/result", {state: {input: res.data}})
-        //     } else { 
-        //         alert("Data not found")
-        //         resetForm();
-        //     }
-        // })
-        // .catch(err => {
-        //     let message = "Internal server error occurred, Please try again";
-        //     if (err.response.status == 404) {
-        //         message = "Student with provided details not found, Please try again";
-        //     }
-        //     alert(message);
-        //     resetForm();
-        // });
+        await axios
+        .post(APP_URL_CONFIG.BASE_URL + APP_URL_CONFIG.BACKEND_SAVE_STUDENT_RECORD,
+        {
+            // headers: {
+            //     'Access-Control-Allow-Origin': '*'
+            // },
+            regId: regId,
+            rollNo: rollNo,
+            studentName: studentName,
+            motherName: motherName,
+            fatherName: fatherName,
+            courseName: courseName,
+            courseDurationMonths: courseDurationMonths,
+            courseDurationHours: courseDurationHours,
+            status: status,
+            dateOfIssue: dateOfIssue,
+            subjects: fetchedData
+        })
+        .then((res) => {
+            if (res.status === 200) {
+                navigate("/result", {state: {input: res.data}})
+            } else { 
+                alert("Data not found")
+                resetForm();
+            }
+        })
+        .catch(err => {
+            let message = "Internal server error occurred, Please try again";
+            if (err.response.status == 404) {
+                message = "Student with provided details not found, Please try again";
+            }
+            alert(message);
+            resetForm();
+        });
         
     };
     
