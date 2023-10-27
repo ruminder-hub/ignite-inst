@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { HomeHeader } from "../header";
 import { Header } from "../header";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { Navbar } from "../navbar_component/navbar";
+import { HomeNavbar } from "../navbar_component/navbar";
+import { course } from "../../config/constants";
 
 export const StudentResult = (input: any) => {
     const [data, setData] = useState(
@@ -42,16 +43,23 @@ export const StudentResult = (input: any) => {
         }));
     }, []);
 
+    let totalMarksObtained = 0;
+    let totalMarks = 0;
+    data.subjects.map((data: any, index: any)=>{
+        totalMarksObtained += data.extMarksObtained + data.intMarksObtained;
+        totalMarks += data.maximumMarks;
+    });
+
     return (
         <>
-        <Navbar isMainPage={false}/>
+        <HomeNavbar isMainPage={false}/>
         <section id="hero" className="d-flex align-items-center" style={{background: "#ee7742"}}>
 
-            <div className="container" style={{background: "#ee7742"}}>
-        <div>Regd. No.: {data.regId}</div>
+        <div className="container" style={{background: "#ee7742"}}>
+        <div className="pt-md-4">Regd. No.: {data.regId}</div>
         <div>Roll No.: {data.rollNo}</div>
         <div className="align-items-center" style={{textAlign: "center"}}> Course: {data.courseName}</div>
-        <div style={{textAlign: "center"}}> Duration: {data.courseDurationMonths} Months - {data.courseDurationHours} Hours</div>
+        <div style={{textAlign: "center"}}> Duration: {data.courseDurationMonths} Months {data.courseDurationHours !== 0 && `- ${data.courseDurationHours} Hours`}</div>
         <div>Student Name: {data.studentName}</div>
         <div>Father Name: {data.fatherName}</div>
         <div>Mother Name: {data.motherName}</div>
@@ -75,22 +83,31 @@ export const StudentResult = (input: any) => {
             
             {
                 data.subjects.map((data: any, index: any)=>{
+                    let externalMarks = data.extMarksObtained;
+                    let internalMarks = data.intMarksObtained
                     if (data.extMarksObtained == 0) {
-                        data.extMarksObtained = "-";
+                       externalMarks = "-";
                     }
                     if (data.intMarksObtained == 0) {
-                        data.intMarksObtained = "-";
+                        internalMarks = "-";
                     }
                     return(
                         <tr key={index}>
                             <td className="text-center">{index+1}</td>
                             <td className="text-center">{data.subjectName}</td>
-                            <td className="text-center" >{data.extMarksObtained}</td><td className="text-center">{data.intMarksObtained}</td>
+                            <td className="text-center" >{externalMarks}</td><td className="text-center">{internalMarks}</td>
                             <td className="text-center" >{data.maximumMarks}</td>
                         </tr>
                     )
                 })
             }
+            </tbody>
+            <tbody>
+                <tr>
+                    <td className="text-center" colSpan={2}>Total Marks</td>
+                    <td className="text-center" colSpan={2}>{totalMarksObtained}</td>
+                    <td className="text-center" >{totalMarks}</td>
+                </tr>
             </tbody>
         </table>
 

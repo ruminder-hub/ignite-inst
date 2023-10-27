@@ -1,14 +1,13 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import 'aos/dist/aos.css';
-import { Footer } from './pages/footer';
-import { Team } from './pages/team';
 import { Route, Routes } from 'react-router-dom';
-import { Home } from './pages/home';
 import { VerifyResults } from './components/student_component/verifyResults';
 import { StudentResult } from './components/student_component/studentResult';
-import { Navbar } from './components/navbar_component/navbar';
+import { HomeNavbar } from './components/navbar_component/navbar';
 import { HomePage } from './components/home_component/home_page';
+import { StudentCreationForm } from './components/student_component/studentCreationForm';
+import Login from './components/login_component/login';
 
 function App() {
   return (
@@ -17,8 +16,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/verify-results" element={<VerifyResults />} />
           <Route path="/result" element={<StudentResult />} />
-          <Route path="/nav" element={<Navbar isMainPage={false}/>} />
+          <Route path="/nav" element={<HomeNavbar isMainPage={false}/>} />
           <Route path="/home" element={<HomePage/>} />
+          <Route path="/student/createsecret" element={<StudentCreationForm/>} />
+          <Route path="/login" element={<Login/>} />
        </Routes>
     </>
  );

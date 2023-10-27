@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom"
-
 import "./navbar_style.css";
 import { useState } from "react";
 import { course, courses } from "../../config/constants"
 import { CourseInterface } from "../../interfaces/course_interface";
+import { Container, Nav, NavDropdown, Navbar, NavbarBrand } from "react-bootstrap";
 
 interface NavBarProps{
     isMainPage: boolean;
  }
 
-export const Navbar = ({isMainPage}: NavBarProps): JSX.Element => {
+export const HomeNavbar = ({isMainPage}: NavBarProps): JSX.Element => {
     const [showNav, setShowNav] = useState(false)
 
     const toggleNavItems = () => {
@@ -66,11 +66,50 @@ export const Navbar = ({isMainPage}: NavBarProps): JSX.Element => {
         </ul>
     }
 
+    function BasicExample() {
+      return (
+        <Navbar bg="white" expand="lg" className="justify-content-between pt-sm-1 text-openserif">
+            <NavbarBrand href="#home" className="ml-lg-4">
+              <img src="../assets/img/ignite.png" width="140" height="50" className="d-inline-block align-top" alt="Ignite Institute">
+              </img>
+            </NavbarBrand>
+            <Nav className="mr-md-2 text-danger">
+                <Nav.Item>
+                  <Nav.Link href="#intro">Home</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="#about">About Us</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="#team">Team</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="#contact">Contact</Nav.Link>
+                </Nav.Item>
+                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                      <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                      <NavDropdown.Item href="#action/3.2">
+                        Another action
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item href="#action/3.4">
+                        Separated link
+                      </NavDropdown.Item>
+                </NavDropdown>
+            <Nav.Link href="/verify-results">Verify Results</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+        </Nav>
+        </Navbar>
+      );
+    }
+    
+
     return (
       <div className="navigation" id="navigation">
         <nav id="navbar" className="navbar">
             <div className="brand-title">
-                    <Link to="/"><img src="assets/img/ignite.png" alt=""></img></Link>
+                    <Link to="/"><img src="../assets/img/ignite.png" alt=""></img></Link>
             </div>
             <a href="#" className="toggle-button" onClick={toggleNavItems}>
                 <span className="bar"></span>
